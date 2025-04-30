@@ -1,98 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap'); /* Import Comic Neue font */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f7f6; /* Light grey background */
-    color: #333;
+    background-image: url('felix-25.png'); /* Add background image */
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Keep image fixed during scroll */
+    color: white; /* Default text color to white for contrast */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     align-items: center; /* Center content horizontally */
+    justify-content: flex-end; /* Push content towards the bottom */
 }
 
-header {
-    background-color: #005a9e; /* Rehaklinik Blue */
-    color: white;
-    padding: 1.5em 0;
-    text-align: center;
-    width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Adjust overlay to be darker and less opaque */
+body::before {
+    content: '';
+    position: fixed; /* Use fixed to cover the viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay with 40% opacity */
+    z-index: -1; /* Place it behind the content */
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2em;
-}
+/* Header styles removed */
 
 main {
     flex: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Center the box horizontally */
+    align-items: flex-end; /* Align the box content to the bottom */
     padding: 2em;
+    padding-bottom: 10vh; /* Add padding at the bottom */
     width: 100%;
-    max-width: 800px; /* Limit content width */
+    max-width: 900px; /* Allow slightly wider content */
     box-sizing: border-box;
+    text-align: center; /* Center text within main */
 }
 
 .congrats {
-    background-color: white;
-    padding: 2.5em;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: transparent; /* Make container transparent */
+    padding: 0; /* Remove padding */
+    border-radius: 0; /* Remove border-radius */
+    box-shadow: none; /* Remove shadow */
     text-align: center;
-    animation: fadeIn 1s ease-in-out;
+    /* animation removed */
 }
 
-.congrats h2 {
-    color: #005a9e; /* Rehaklinik Blue */
+/* Removed .congrats h2 styles */
+/* Removed .congrats p styles (general ones) */
+
+/* Style for the new funny text */
+.funny-text {
+    font-family: 'Comic Neue', cursive; /* Apply comic font */
+    font-size: 3.5em; /* Make it much larger */
+    color: #ffffff; /* White color */
     margin-top: 0;
+    margin-bottom: 0.3em;
+    transform: rotate(-3deg); /* Slightly rotate for a funny look */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Stronger shadow for readability */
+    line-height: 1.1;
 }
 
-.congrats p {
-    line-height: 1.6;
+.sub-funny-text {
+    font-family: 'Comic Neue', cursive; /* Apply comic font */
+    font-size: 2.5em; /* Make it larger */
+    color: #f0f0f0; /* Slightly off-white */
     margin-bottom: 1em;
+    transform: rotate(2deg); /* Rotate slightly the other way */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Stronger shadow */
 }
 
 button {
-    background-color: #007bff; /* Slightly brighter blue for button */
+    background-color: #d9534f; /* Use the reddish color from before */
     color: white;
     border: none;
-    padding: 12px 25px;
-    font-size: 1em;
-    border-radius: 5px;
+    padding: 15px 30px; /* Make button bigger */
+    font-size: 1.2em; /* Make text bigger */
+    font-weight: bold;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 1.5em;
+    margin-top: 1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: translateY(-2px);
+    background-color: #c9302c; /* Darker red on hover */
+    transform: translateY(-3px) scale(1.05); /* Add scale effect */
 }
 
 button:active {
-    transform: translateY(0);
+    transform: translateY(0) scale(1); /* Reset transform on click */
 }
 
-footer {
-    background-color: #e9ecef;
-    color: #6c757d;
-    text-align: center;
-    padding: 1em 0;
-    width: 100%;
-    margin-top: auto; /* Push footer to the bottom */
-    font-size: 0.9em;
-}
+/* Footer styles removed */
 
-/* Simple fade-in animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+/* Fade-in animation can be removed or kept if desired, currently removed via .congrats */
